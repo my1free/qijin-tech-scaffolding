@@ -15,3 +15,15 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+# dubbo config
+application:
+  name: ${artifactId}
+
+registry:
+  address: zookeeper://47.75.203.94:2181
+  client: curator
+
+protocol:
+  threads: 20
+  port: 23333

@@ -11,11 +11,13 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 
 import java.nio.charset.Charset;
 
 @SpringBootApplication
 @MapperScan("${package}.db.dao")
+@DubboComponentScan(basePackages = "${package}.server")
 public class ServerApplication {
 
 	public static void main(String[] args) {
