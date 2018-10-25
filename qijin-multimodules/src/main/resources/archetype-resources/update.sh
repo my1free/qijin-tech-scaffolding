@@ -9,7 +9,7 @@
 #   因此，开发了这个脚本。通过此脚本，可自动对比已有工程与通过scaffolding生成工程的差异，并将差异展示出来。使用者可自行取舍两方的差异
 
 # 使用方法
-#   1. 执行本脚本，即执行：sh synchronize.sh
+#   1. 执行本脚本，即执行：sh update.sh
 #   2. 该脚本会自动对比所有文件，并通过vimdiff展示
 #   3. 使用者根据二者的区别，根据需要进行取舍
 
@@ -55,6 +55,7 @@ function gen_tmp_project
         /bin/rm -rf $artifactid
     fi
     mvn archetype:generate -DarchetypeGroupId=com.aviagames.archetype -DarchetypeArtifactId=aviagames-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=$groupid  -DartifactId=$artifactid  -Dversion=$version  -Dpackage=$package
+    cd -
 }
 
 function lsdir()
@@ -70,18 +71,17 @@ function lsdir()
     done
 }
 
-function diff_file()
+function diff_file
 {
-    file=$2
     srcFile=$1
-    desFile=$path2$file
+    desFile=$2
     if [ -f $desFile ];then
         srcMd5=`cat $srcFile | md5`
         desMd5=`cat $desFile | md5`
         if [ $srcMd5 = $desMd5 ];then
-            echo "[SUCCESS] equals file: $file"
+            echo "[SUCCESS] equals file: $desFile"
         else
-            echo "[WARNING] unequals file: $file"
+            echo "[WARNING] unequals file: $desFile"
             vimdiff $srcFile $desFile
         fi
     else
@@ -100,8 +100,9 @@ function diff_files
         exit 1
     fi
     for ele in ${template_files[@]};do
-        file=`echo $ele | awk -F"$template_path" '{print $2}'`
-        diff_file $ele $file
+        file_name=`echo $ele | awk -F"$template_path" '{print $2}'`
+        opponent_file=$opponent_path$file_name
+        diff_file $ele $opponent_file
     done
 }
 

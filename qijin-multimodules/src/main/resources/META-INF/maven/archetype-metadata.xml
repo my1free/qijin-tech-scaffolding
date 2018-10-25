@@ -25,10 +25,10 @@ under the License.
                       name="${artifactId}">
 
     <fileSets>
-        <fileSet filtered="true" encoding="UTF-8" packaged="false">
+        <fileSet filtered="false" encoding="UTF-8" packaged="false">
             <directory></directory>
             <includes>
-                <include>synchronize.sh</include>
+                <include>update.sh</include>
             </includes>
         </fileSet>
     </fileSets>
