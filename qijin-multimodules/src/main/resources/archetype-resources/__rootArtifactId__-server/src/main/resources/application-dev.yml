@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
+      username: test
+      password: Test@123
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 10
+      max-active: 30
+      min-idle: 5
+      max-wait: 60
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+    timeout: 300ms
+    db: 0
+
+# dubbo config
+# 配置参考地址: https://yq.aliyun.com/articles/79277
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  protocol:
+    threads: 20
+    port: 2333
+  application:
+    qos-enable: false
+
+# swagger config
+swagger:
+  enable: true

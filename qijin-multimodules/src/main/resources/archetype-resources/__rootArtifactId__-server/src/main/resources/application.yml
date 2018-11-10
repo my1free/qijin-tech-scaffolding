@@ -1,29 +1,25 @@
-server:
-  port: 8080
-
+# profile config
+# 参考地址: https://www.baeldung.com/spring-profiles
 spring:
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
-    username: root
-    password:
-    jpa:
-      hibernate:
-        ddl-auto: none
+  profiles:
+    active: @spring.profiles.active@
 
 # mybatis config
 mybatis:
-  configuration:
-    map-underscore-to-camel-case: true
+  config-location: classpath:sqlMapConfig.xml
 
 # dubbo config
-application:
-  name: ${artifactId}
+# 配置参考地址: https://yq.aliyun.com/articles/79277
+dubbo:
+  application:
+    name: ${artifactId}
+  registry:
+    client: curator
+  protocol:
+    name: dubbo
 
-registry:
-  address: zookeeper://47.75.203.94:2181
-  client: curator
+# logging config
+logging:
+  level:
+    tech.qijin.${artifactId}.db: DEBUG
 
-protocol:
-  threads: 20
-  port: 23333

@@ -9,19 +9,8 @@
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%F:%L] - %m%n</Pattern>
             </PatternLayout>
         </Console>
-
-        <RollingRandomAccessFile name="DailyLog" fileName="${log.dir}/${artifactId}.log"
-                                 filePattern="${log.dir}/${artifactId}.log.%d{yyyy-MM-dd}">
-            <PatternLayout>
-                <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%c{1}] - %m%n</Pattern>
-            </PatternLayout>
-            <Policies>
-                <TimeBasedTriggeringPolicy/>
-            </Policies>
-        </RollingRandomAccessFile>
-
-        <RollingRandomAccessFile name="CheckAlive" fileName="${log.dir}/${artifactId}.check.log"
-                                 filePattern="${log.dir}/${artifactId}.check.log.%d{yyyy-MM-dd}">
+        <RollingRandomAccessFile name="DailyLog" fileName="${log.dir}/${artifactId}.test.log"
+                                 filePattern="${log.dir}/${artifactId}.test.log.%d{yyyy-MM-dd}">
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%c{1}] - %m%n</Pattern>
             </PatternLayout>
@@ -33,12 +22,8 @@
 
 
     <Loggers>
-
         <Logger name="${package}" level="info" additivity="false">
             <AppenderRef ref="DailyLog"/>
-        </Logger>
-        <Logger name="CHECK" level="info" additivity="false">
-            <AppenderRef ref="CheckAlive"/>
         </Logger>
         <Root level="info">
             <AppenderRef ref="Console"/>

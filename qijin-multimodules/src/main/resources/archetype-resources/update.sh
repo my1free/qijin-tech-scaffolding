@@ -54,7 +54,7 @@ function gen_tmp_project
         echo "[INFO] $artifactid exists. delete it"
         /bin/rm -rf $artifactid
     fi
-    mvn archetype:generate -DarchetypeGroupId=com.aviagames.archetype -DarchetypeArtifactId=aviagames-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=$groupid  -DartifactId=$artifactid  -Dversion=$version  -Dpackage=$package
+    mvn archetype:generate -DarchetypeGroupId=com.aviagames.archetype -DarchetypeArtifactId=aviagames-multimodules -DarchetypeVersion=1.0 -DgroupId=$groupid  -DartifactId=$artifactid  -Dversion=$version  -Dpackage=$package -DinteractiveMode=false
     cd -
 }
 
@@ -85,7 +85,8 @@ function diff_file
             vimdiff $srcFile $desFile
         fi
     else
-        echo "[ERROR] file not found: $desFile"
+        echo "[WARNING] file not found: $desFile. copy it"
+        cp $srcFile $desFile
     fi
 }
 

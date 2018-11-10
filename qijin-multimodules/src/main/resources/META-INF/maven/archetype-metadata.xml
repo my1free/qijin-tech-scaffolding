@@ -24,14 +24,28 @@ under the License.
                       xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
                       name="${artifactId}">
 
+    <requiredProperties>
+        <requiredProperty key="parentVersion">
+            <defaultValue>1.0.0-SNAPSHOT</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
     <fileSets>
+        <fileSet filtered="true" encoding="UTF-8" packaged="false">
+            <directory></directory>
+            <includes>
+                <include>mbg.sh</include>
+            </includes>
+        </fileSet>
         <fileSet filtered="false" encoding="UTF-8" packaged="false">
             <directory></directory>
             <includes>
                 <include>update.sh</include>
+                <include>.gitignore</include>
             </includes>
         </fileSet>
     </fileSets>
+
     <modules>
         <module id="${rootArtifactId}-db" dir="__rootArtifactId__-db"
                 name="${rootArtifactId}-db">
@@ -107,6 +121,42 @@ under the License.
         </module>
         <module id="${rootArtifactId}-service" dir="__rootArtifactId__-service"
                 name="${rootArtifactId}-service">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.**</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="false" encoding="UTF-8" packaged="false">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.**</include>
+                    </includes>
+                </fileSet>
+
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.**</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="false">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.**</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory></directory>
+                    <includes>
+                        <include>pom.xml</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-base" dir="__rootArtifactId__-base"
+                name="${rootArtifactId}-base">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
