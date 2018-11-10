@@ -20,22 +20,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
-
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>release</id>
-            <url>http://maven.bigbeargames.net/repository/Avia-Release/</url>
-            <layout>default</layout>
-        </repository>
-        <snapshotRepository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>snapshot</id>
-            <url>http://maven.bigbeargames.net/repository/Avia-SnapShot/</url>
-            <layout>default</layout>
-        </snapshotRepository>
-    </distributionManagement>
-
     <build>
         <extensions>
             <extension>
