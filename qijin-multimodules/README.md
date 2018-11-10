@@ -5,10 +5,17 @@
 ## 特点
 1. 自动生成multimodule
 2. 自动生成多个module。目前支持的module有:
-    1) xxx-db: 提供访问db的类和方法。可通过mbg自动生成mapper、model和动态查询sql。
-    2) xxx-rpc-client: rpc client
-    3) xxx-service: 服务于xxx-server，整个系统核心逻辑所在
-    4) xxx-server: 提供rpc和rest接口
+
+    - xxx-base: 基础包
+
+    - xxx-db: 提供访问db的类和方法。可通过mbg自动生成mapper、model和动态查询sql。
+    
+    - xxx-rpc-client: rpc client
+    
+    - xxx-service: 服务于xxx-server，整个系统核心逻辑所在
+    
+    - xxx-server: 提供rpc和rest接口
+    
 3. server使用spring boot2
 4. 一键执行命令后，极少改动，即可得到一个完整工程
 
@@ -17,8 +24,11 @@
 ### 生成工程
 在任何没有pom.xml文件的目录下，执行如下命令：
 
+### 生成工程
+在任何没有pom.xml文件的目录下，执行如下命令：
+
 ```
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account -DinteractiveMode=false
 ```
 
 其中如下参数须根据需要，自行修改:
@@ -122,6 +132,11 @@ cd account
 mvn -U clean  mybatis-generator:generate -pl account-db/
 ```
 
+数据库每次变动后，都需要执行上面的语句，很长，记不住，很麻烦。为此，将上面的命令写到了mbg.sh脚本中。这样，每次数据库改动后，只需执行：
+```
+sh mbg.sh
+```
+
 生成的目录结构如下所示，数据库中的table和column会自动生成对应的Java类。同时生成了常见的CRUD操作：
 ```
 account-db/
@@ -149,13 +164,12 @@ account-db/
 
 ### install依赖
 server依赖service, db等，因此需要先把所有的包都install一下
+
 ```
 # 在生成工程的根目录
 mvn -U clean install -Dmaven.test.skip 
 ```
 
-**注**
-其实`mvn install`会自动执行mbg。以后熟练的话，上面的一步可以省略掉。但是数据库配置是不能省略的
 
 ### 启动server测试
 
@@ -189,6 +203,8 @@ http://localhost:8080/health_check
 mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account
 
 cd account
+
+sh mbg.sh
 
 mvn install
 
