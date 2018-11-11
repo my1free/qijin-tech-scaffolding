@@ -61,3 +61,6 @@ mvn archetype:generate -DarchetypeGroupId=com.qijin.archetype -DarchetypeArtifac
 ## TODO
 1. UT仍需完善
 2. 目前只能生成commons下的子module，如需支持自定义父模块，仍需完善
+
+执行命令放到最后一行：
+mvn archetype:generate -DarchetypeGroupId=com.qijin.archetype -DarchetypeArtifactId=qijin-quickstart -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=com.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=com.qijin.commons.demo -DinteractiveMode=false
