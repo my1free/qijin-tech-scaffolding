@@ -8,16 +8,6 @@ spring:
 mybatis:
   config-location: classpath:sqlMapConfig.xml
 
-# dubbo config
-# 配置参考地址: https://yq.aliyun.com/articles/79277
-dubbo:
-  application:
-    name: ${artifactId}
-  registry:
-    client: curator
-  protocol:
-    name: dubbo
-
 # logging config
 logging:
   level:

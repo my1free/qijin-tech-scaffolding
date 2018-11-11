@@ -15,29 +15,6 @@ spring:
       min-idle: 5
       max-wait: 60
 
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-idle: 8
-        min-idle: 0
-        max-active: 8
-    timeout: 300ms
-    db: 0
-
-# dubbo config
-# 配置参考地址: https://yq.aliyun.com/articles/79277
-dubbo:
-  registry:
-    address: zookeeper://127.0.0.1:2181
-  protocol:
-    threads: 20
-    port: 2333
-  application:
-    qos-enable: false
-
 # swagger config
 swagger:
   enable: true

@@ -5,25 +5,13 @@ spring:
   datasource:
     druid:
       url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
-      username: test
-      password: Test@123
+      username: root
+      password:
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 10
       max-active: 30
       min-idle: 5
       max-wait: 60
-
-  redis:
-    host: 47.75.203.94
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-idle: 8
-        min-idle: 0
-        max-active: 8
-    timeout: 300ms
-    db: 0
 
 # mybatis config
 mybatis:
