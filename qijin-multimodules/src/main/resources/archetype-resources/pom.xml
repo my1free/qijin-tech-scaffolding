@@ -44,6 +44,7 @@
         <plugin.source.version>3.0.1</plugin.source.version>
         <plugin.mbg.version>1.3.7</plugin.mbg.version>
         <plugin.surefire.version>2.22.1</plugin.surefire.version>
+        <plugin.versions.version>2.3</plugin.versions.version>
 
         <mysql.connector.version>5.1.47</mysql.connector.version>
     </properties>
@@ -210,6 +211,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${plugin.versions.version}</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
             </plugin>
         </plugins>
     </build>
