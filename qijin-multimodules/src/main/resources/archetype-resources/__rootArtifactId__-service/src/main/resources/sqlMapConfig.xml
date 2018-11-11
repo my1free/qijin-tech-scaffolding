@@ -6,8 +6,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
     <typeHandlers>
-        <typeHandler handler="com.aviagames.commons.mybatis.handler.EnumValueTypeHandler"
-                     javaType="com.aviagames.commons.lang.constant.EnvEnum" />
+        <!--<typeHandler handler="tech.qijin.commons.mybatis.handler.EnumValueTypeHandler"-->
+                     <!--javaType="tech.qijin.commons.cache.constant.EnvEnum" />-->
     </typeHandlers>
     <plugins>
         <!--https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md -->
@@ -30,7 +30,7 @@
             <property name="closeConn" value="false" />
         </plugin>
         <!--自动插入env和更新updated_at-->
-        <plugin interceptor="com.aviagames.commons.mybatis.interceptor.EnvInterceptor"></plugin>
+        <!--<plugin interceptor="tech.qijin.commons.mybatis.interceptor.EnvInterceptor"></plugin>-->
     </plugins>
 
 </configuration>

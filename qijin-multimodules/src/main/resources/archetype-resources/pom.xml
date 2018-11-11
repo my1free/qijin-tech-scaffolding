@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>${rootArtifactId}-base</module>
         <module>${rootArtifactId}-db</module>
         <module>${rootArtifactId}-service</module>
         <module>${rootArtifactId}-server</module>
@@ -26,10 +27,7 @@
         <java.version>1.8</java.version>
         <project.version>${version}</project.version>
 
-        <root.db.version>${version}</root.db.version>
-        <root.service.version>${version}</root.service.version>
-        <root.server.version>${version}</root.server.version>
-        <root.rpc.client.version>${version}</root.rpc.client.version>
+        <commons.version>1.0.0-SNAPSHOT</commons.version>
 
         <guava.version>24.0-jre</guava.version>
         <fastjson.version>1.2.47</fastjson.version>
@@ -157,6 +155,30 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.profiles.active>test</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <pluginManagement>

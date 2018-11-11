@@ -200,7 +200,7 @@ http://localhost:8080/health_check
 以生成account为例
 
 ```
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DarchetypeCatalog=local -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account -DinteractiveMode=false
 
 cd account
 
@@ -219,3 +219,5 @@ java -jar account-server/target/account-server.jar
 1. UT仍需完善
 2. maven surefire plugin默认不能skip test的问题仍未解决
 
+执行命令放到最后一行：
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DarchetypeCatalog=local -DgroupId=tech.qijin.account  -DartifactId=account  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.account -DinteractiveMode=false
