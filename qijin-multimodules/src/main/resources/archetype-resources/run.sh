@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mv gitignore .gitignore &&
+
 mvn clean install &&
 
 mvn clean package -pl ${artifactId}-server &&

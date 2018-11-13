@@ -42,7 +42,7 @@ under the License.
             <directory></directory>
             <includes>
                 <include>update.sh</include>
-                <include>.gitignore</include>
+                <include>gitignore</include>
             </includes>
         </fileSet>
     </fileSets>
