@@ -54,7 +54,7 @@ function gen_tmp_project
         echo "[INFO] $artifactid exists. delete it"
         /bin/rm -rf $artifactid
     fi
-    mvn archetype:generate -DarchetypeGroupId=com.aviagames.archetype -DarchetypeArtifactId=aviagames-multimodules -DarchetypeVersion=1.0 -DgroupId=$groupid  -DartifactId=$artifactid  -Dversion=$version  -Dpackage=$package -DinteractiveMode=false
+    mvn archetype:generate -DarchetypeGroupId=tech.qiijn.archetype -DarchetypeArtifactId=qijin-multimodules -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=$groupid  -DartifactId=$artifactid  -Dversion=$version  -Dpackage=$package -DinteractiveMode=false
     cd -
 }
 
