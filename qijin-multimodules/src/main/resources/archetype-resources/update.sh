@@ -86,6 +86,11 @@ function diff_file
         fi
     else
         echo "[WARNING] file not found: $desFile. copy it"
+        desPath=$(dirname "$desFile")
+        if [ ! -d $desPath ];then
+            echo "$desPath not exist. create"
+            mkdir -p $desPath
+        fi
         cp $srcFile $desFile
     fi
 }

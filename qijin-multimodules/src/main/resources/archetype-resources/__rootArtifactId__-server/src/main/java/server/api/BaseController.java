@@ -3,22 +3,29 @@ package ${package}.server.api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * author SYSTEM
  */
-@RestController
+@Controller
 public class BaseController {
 
-    private static final Logger logger = LoggerFactory.getLogger("CHECK");
+    private static final Logger LOGGER = LoggerFactory.getLogger("BASE");
 
-    @RequestMapping(value = "/health_check",method = RequestMethod.GET)
+
+    @GetMapping(value = "/")
+    public String index(Model model) {
+        return "index";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/health_check", method = RequestMethod.GET)
     @ApiOperation(value = "健康检查", notes = "http code 200 is ok")
     public String healthCheck() {
-        logger.info("check alive");
+        LOGGER.info("check alive");
         return "Alive";
     }
 }

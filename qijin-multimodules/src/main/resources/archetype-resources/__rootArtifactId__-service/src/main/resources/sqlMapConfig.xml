@@ -7,7 +7,7 @@
     </settings>
     <typeHandlers>
         <!--<typeHandler handler="tech.qijin.commons.mybatis.handler.EnumValueTypeHandler"-->
-                     <!--javaType="tech.qijin.commons.cache.constant.EnvEnum" />-->
+                     <!--javaType="tech.qijin.commons.langconstant.EnvEnum" />-->
     </typeHandlers>
     <plugins>
         <!--https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md -->
