@@ -5,7 +5,7 @@
 在没有pom.xml的任意目录执行如下命令：
 
 ```
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-quickstart -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-commons-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
 ```
 
 其中如下参数须根据需要，自行修改:
@@ -63,4 +63,4 @@ mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifa
 2. 目前只能生成commons下的子module，如需支持自定义父模块，仍需完善
 
 执行命令放到最后一行：
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-quickstart -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-commons-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
