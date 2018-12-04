@@ -1,11 +1,11 @@
 ## 作用
-自动生成commons目录下的子module
+自动生成util4j目录下的子module
 
 ## 使用方法
 在没有pom.xml的任意目录执行如下命令：
 
 ```
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-commons-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-util4j-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.util4j  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.util4j.demo -DinteractiveMode=false
 ```
 
 其中如下参数须根据需要，自行修改:
@@ -25,14 +25,14 @@ mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifa
 │   │   └── java
 │   │       └── tech
 │   │           └── qijin
-│   │               └── commons
+│   │               └── util4j
 │   │                   └── demo
 │   │                       └── App.java
 │   └── test
 │       └── java
 │           └── tech
 │               └── qijin
-│                   └── commons
+│                   └── util4j
 │                       └── demo
 │                           └── AppTest.java
 ```
@@ -42,12 +42,12 @@ mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifa
 ```xml
 <parent>
     <artifactId>parent</artifactId>
-    <groupId>tech.qijin.commons</groupId>
+    <groupId>tech.qijin.util4j</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../commons-parent</relativePath>
+    <relativePath>../util4j-parent</relativePath>
 </parent>
 
-<groupId>tech.qijin.commons</groupId>
+<groupId>tech.qijin.util4j</groupId>
 <artifactId>demo</artifactId>
 <version>1.0.0-SNAPSHOT</version>
 ```
@@ -56,11 +56,11 @@ mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifa
 
 这样，就生成了一个子module所需的所有基础配置。
 
-然后再将该module放到commons目录下，同时在commons/pom.xml中添加该`<module>`。一个全新的基础jar包就生成了。
+然后再将该module放到util4j目录下，同时在util4j/pom.xml中添加该`<module>`。一个全新的基础jar包就生成了。
 
 ## TODO
 1. UT仍需完善
-2. 目前只能生成commons下的子module，如需支持自定义父模块，仍需完善
+2. 目前只能生成util4j下的子module，如需支持自定义父模块，仍需完善
 
 执行命令放到最后一行：
-mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-commons-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.commons  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.commons.demo -DinteractiveMode=false
+mvn archetype:generate -DarchetypeGroupId=tech.qijin.archetype -DarchetypeArtifactId=qijin-util4j-start -DarchetypeVersion=1.0-SNAPSHOT -Dcatalog=local -DgroupId=tech.qijin.util4j  -DartifactId=demo  -Dversion=1.0.0-SNAPSHOT  -Dpackage=tech.qijin.util4j.demo -DinteractiveMode=false
