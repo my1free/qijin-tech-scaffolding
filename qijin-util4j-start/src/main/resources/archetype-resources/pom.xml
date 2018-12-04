@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>commons-parent</artifactId>
-        <groupId>tech.qijin.commons</groupId>
+        <artifactId>util4j-parent</artifactId>
+        <groupId>tech.qijin.util4j</groupId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../commons-parent</relativePath>
+        <relativePath>../util4j-parent</relativePath>
     </parent>
 
     <groupId>${groupId}</groupId>

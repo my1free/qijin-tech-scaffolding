@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tech.qijin.archetype</groupId>
-    <artifactId>qijin-commons-start</artifactId>
+    <artifactId>qijin-util4j-start</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
 
