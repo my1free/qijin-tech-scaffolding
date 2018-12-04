@@ -1,4 +1,4 @@
-package $package.test;
+package ${package}.test;
 
 /**
  * Unit test for simple App.
