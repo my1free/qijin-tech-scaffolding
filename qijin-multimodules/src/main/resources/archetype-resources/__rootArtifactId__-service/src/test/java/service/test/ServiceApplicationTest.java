@@ -10,12 +10,8 @@ import org.springframework.test.context.TestPropertySource;
  * @author UnitTest
  */
 
-@SpringBootApplication(scanBasePackages = {"${package}",
-        "com.aviagames.commons",
-        "com.aviagames.zeus.client"})
+@SpringBootApplication(scanBasePackages = {"${package}")
 @MapperScan("${package}.db.dao")
-@SpringBootTest
-@TestPropertySource(locations="classpath:application.yml")
 public class ServiceApplicationTest {
 
     public static void main(String[] args) {

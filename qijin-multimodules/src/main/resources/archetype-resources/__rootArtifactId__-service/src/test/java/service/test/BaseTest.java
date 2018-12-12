@@ -15,10 +15,10 @@ import org.springframework.transaction.annotation.Transactional;
  * 开始做眼保健操：←_← ↑_↑ →_→ ↓_↓
  **/
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = ServiceApplicationTest.class)
 @Transactional
 @Rollback(value = true)
-@Profile("ut")
+@ActiveProfiles(profiles = "dev")
 public class BaseTest {
     protected static final Logger LOGGER = LoggerFactory.getLogger("TEST");
 }
