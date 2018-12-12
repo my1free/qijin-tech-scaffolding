@@ -1,6 +1,10 @@
 server:
   port: 8080
 
+# 关闭dubbo
+dubbo:
+  enabled: false
+
 spring:
   datasource:
     druid:
