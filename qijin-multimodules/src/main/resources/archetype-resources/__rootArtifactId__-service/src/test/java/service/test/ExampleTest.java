@@ -39,7 +39,7 @@ public class ExampleTest extends BaseTest {
     }
 
 
-    @Sql(scripts = {"/data/sql/test.sql"})
+    @Sql(scripts = {"/data/test.sql"})
     @Test
     public void test() {
         LOGGER.info("test");

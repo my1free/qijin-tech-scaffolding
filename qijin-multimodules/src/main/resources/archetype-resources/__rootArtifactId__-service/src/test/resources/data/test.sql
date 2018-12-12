@@ -1,1 +1,2 @@
 -- 测试时，需要往数据库中插入的数据，作为测试数据
+-- insert into test (name, age) values('test', 18);

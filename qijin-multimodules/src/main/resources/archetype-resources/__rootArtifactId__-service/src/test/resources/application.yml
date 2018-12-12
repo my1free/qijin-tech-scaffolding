@@ -16,3 +16,7 @@ spring:
 # mybatis config
 mybatis:
   config-location: classpath:sqlMapConfig.xml
+
+logging:
+  level:
+    tech.qijin.${artifactId}.db: DEBUG

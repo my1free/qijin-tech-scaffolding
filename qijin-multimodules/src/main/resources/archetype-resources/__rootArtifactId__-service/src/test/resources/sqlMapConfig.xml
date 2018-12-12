@@ -6,8 +6,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
     <typeHandlers>
-        <!--<typeHandler handler="tech.qijin.commons.mybatis.handler.EnumValueTypeHandler"-->
-                     <!--javaType="tech.qijin.commons.langconstant.EnvEnum" />-->
+        <typeHandler handler="tech.qijin.util4j.mybatis.handler.EnumValueTypeHandler"
+                     javaType="tech.qijin.util4j.trace.pojo.EnvEnum" />
     </typeHandlers>
     <plugins>
         <!--https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md -->
@@ -29,8 +29,20 @@
             <property name="reasonable" value="false" />
             <property name="closeConn" value="false" />
         </plugin>
-        <!--自动插入env和更新updated_at-->
-        <!--<plugin interceptor="tech.qijin.commons.mybatis.interceptor.EnvInterceptor"></plugin>-->
+        <!--打印sql信息-->
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.SqlInfoInterceptor"></plugin>
+        <!--自动set valid字段-->
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.ValidInterceptor">
+            <property name="enable" value="true"></property>
+            <property name="tenantColumnName" value="valid"></property>
+            <property name="includedTables" value=""></property>
+        </plugin>
+        <!--自动set env字段-->
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.EnvInterceptor">
+            <property name="enable" value="true"></property>
+            <property name="tenantColumnName" value="env"></property>
+            <property name="includedTables" value=""></property>
+        </plugin>
     </plugins>
 
 </configuration>
