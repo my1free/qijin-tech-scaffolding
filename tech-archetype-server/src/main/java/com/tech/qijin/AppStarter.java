@@ -1,4 +1,4 @@
-package tech.qijin.archetype;
+package com.tech.qijin;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import java.util.Arrays;
 
 @Slf4j
-@SpringBootApplication(scanBasePackages = {"com.qijin.tech.archetype"})
+@SpringBootApplication(scanBasePackages = {"tech.qijin"})
 @PropertySource("classpath:/META-INF/app.properties")
 @EnableRetry
 @EnableAsync

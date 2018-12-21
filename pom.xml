@@ -20,7 +20,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <project.version>${version}</project.version>
 
         <commons.version>1.0.0-SNAPSHOT</commons.version>
 
@@ -69,8 +68,8 @@
         </plugins>
     </build>
   <modules>
-    <module>archetype-server</module>
-    <module>archetype-service</module>
-    <module>archetype-db</module>
+    <module>tech-archetype-server</module>
+    <module>tech-archetype-service</module>
+    <module>tech-archetype-db</module>
   </modules>
 </project>
