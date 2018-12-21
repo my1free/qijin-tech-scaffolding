@@ -1,4 +1,4 @@
-package com.qijin.tech.archetype;
+package tech.qijin.archetype;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

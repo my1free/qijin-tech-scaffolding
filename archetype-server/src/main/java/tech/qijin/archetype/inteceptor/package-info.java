@@ -1,4 +1,4 @@
-package com.qijin.tech.archetype.inteceptor;
+package tech.qijin.archetype.inteceptor;
 
 /**
  * springmvc拦截器，aop拦截器等

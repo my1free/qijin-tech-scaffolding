@@ -1,4 +1,4 @@
-package com.qijin.tech.archetype.controller;
+package tech.qijin.archetype.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
