@@ -29,8 +29,20 @@
             <property name="reasonable" value="false" />
             <property name="closeConn" value="false" />
         </plugin>
-        <!--自动插入env和更新updated_at-->
-        <!--<plugin interceptor="tech.qijin.commons.mybatis.interceptor.EnvInterceptor"></plugin>-->
+        <!--打印sql信息-->
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.SqlInfoInterceptor"></plugin>
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.ValidInterceptor">
+            <property name="enable" value="true"></property>
+            <property name="tenantColumnName" value="valid"></property>
+            <property name="includedTables" value=""></property>
+            <property name="excludedTables" value="login_record"></property>
+        </plugin>
+        <plugin interceptor="tech.qijin.util4j.mybatis.interceptor.EnvInterceptor">
+            <property name="enable" value="true"></property>
+            <property name="tenantColumnName" value="env"></property>
+            <property name="includedTables" value=""></property>
+            <property name="excludedTables" value="nickname_lib, email_lib"></property>
+        </plugin>
     </plugins>
 
 </configuration>

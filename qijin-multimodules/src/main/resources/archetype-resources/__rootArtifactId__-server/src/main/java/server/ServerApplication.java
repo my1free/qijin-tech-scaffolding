@@ -3,6 +3,7 @@ package ${package}.server;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration;
 import com.google.common.collect.Lists;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -17,7 +18,8 @@ import java.nio.charset.Charset;
 /**
  * author SYSTEM
  */
-@SpringBootApplication(scanBasePackages = {"${package}"})
+@SpringBootApplication(scanBasePackages = {"${package}"},
+        exclude = PageHelperAutoConfiguration.class)
 @MapperScan("${package}.db.dao")
 public class ServerApplication {
 

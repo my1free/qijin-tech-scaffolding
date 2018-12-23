@@ -12,6 +12,7 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!--project modules-->
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-db</artifactId>
@@ -20,6 +21,43 @@
             <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-base</artifactId>
         </dependency>
+
+        <!--util4j modules-->
+        <dependency>
+            <groupId>tech.qijin.util4j</groupId>
+            <artifactId>util4j-lang</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.qijin.util4j</groupId>
+            <artifactId>util4j-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.qijin.util4j</groupId>
+            <artifactId>util4j-aop</artifactId>
+        </dependency>
+
+        <!--spring boot modules-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--alibaba modules-->
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--db modules-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -29,11 +67,8 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+
+        <!--other modules-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>

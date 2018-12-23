@@ -14,6 +14,11 @@ spring:
       max-active: 30
       min-idle: 5
       max-wait: 60
+    freemarker:
+      suffix: .ftl
+      template-loader-path: classpath:/freemarker/
+      cache: false
+      charset: utf-8
 
 # swagger config
 swagger:
