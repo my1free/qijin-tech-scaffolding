@@ -6,8 +6,8 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
     <typeHandlers>
-        <!--<typeHandler handler="tech.qijin.commons.mybatis.handler.EnumValueTypeHandler"-->
-                     <!--javaType="tech.qijin.commons.langconstant.EnvEnum" />-->
+        <typeHandler handler="tech.qijin.util4j.mybatis.handler.EnumValueTypeHandler"
+                     javaType="tech.qijin.util4j.trace.pojo.EnvEnum" />
     </typeHandlers>
     <plugins>
         <!--https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md -->

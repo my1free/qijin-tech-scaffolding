@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author UnitTest
  */
 
-@SpringBootApplication(scanBasePackages = {"${package}")
+@SpringBootApplication(scanBasePackages = {"${package}"})
 @MapperScan("${package}.db.dao")
 public class ServiceApplicationTest {
 

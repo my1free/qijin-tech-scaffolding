@@ -39,6 +39,10 @@
         </javaClientGenerator>
         <table tableName="%">
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
+            <columnOverride column="valid" property="valid"
+                            javaType="java.lang.Boolean"/>
+            <columnOverride column="env" property="env"
+                            javaType="tech.qijin.util4j.trace.pojo.EnvEnum"/>
         </table>
     </context>
 </generatorConfiguration>
