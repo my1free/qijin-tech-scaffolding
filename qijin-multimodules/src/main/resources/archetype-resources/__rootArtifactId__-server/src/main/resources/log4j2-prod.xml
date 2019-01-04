@@ -10,7 +10,7 @@
             </PatternLayout>
         </Console>
 
-        <RollingRandomAccessFile name="DailyLog" fileName="${log.dir}/${artifactId}.log"
+        <RollingRandomAccessFile name="RootLog" fileName="${log.dir}/${artifactId}.log"
                                  filePattern="${log.dir}/${artifactId}.log.%d{yyyy-MM-dd}">
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%c{1}] - %m%n</Pattern>
@@ -20,8 +20,8 @@
             </Policies>
         </RollingRandomAccessFile>
 
-        <RollingRandomAccessFile name="BaseAppender" fileName="${log.dir}/${artifactId}.base.log"
-                                 filePattern="${log.dir}/${artifactId}.base.log.%d{yyyy-MM-dd}">
+        <RollingRandomAccessFile name="CheckAlive" fileName="${log.dir}/${artifactId}.check.log"
+                                 filePattern="${log.dir}/${artifactId}.check.log.%d{yyyy-MM-dd}">
             <PatternLayout>
                 <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%c{1}] - %m%n</Pattern>
             </PatternLayout>
@@ -29,19 +29,34 @@
                 <TimeBasedTriggeringPolicy/>
             </Policies>
         </RollingRandomAccessFile>
+
+        <RollingRandomAccessFile name="RequestLog" fileName="${log.dir}/${artifactId}.request.log"
+                                 filePattern="${log.dir}/${artifactId}.request.log.%d{yyyy-MM-dd}">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss,SSS} [%-5p][%c{1}] - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingRandomAccessFile>
+
+
+        <CatAppender name="CatAppender"/>
+
+
     </Appenders>
 
 
     <Loggers>
-
-        <Logger name="${package}" level="info" additivity="false">
-            <AppenderRef ref="DailyLog"/>
+        <Logger name="CHECK" level="info" additivity="false">
+            <AppenderRef ref="CheckAlive"/>
         </Logger>
-        <Logger name="BASE" level="info" additivity="false">
-            <AppenderRef ref="BaseAppender"/>
+        <Logger name="REQUEST" level="info" additivity="true">
+            <AppenderRef ref="RequestLog"/>
         </Logger>
         <Root level="info">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RootLog"/>
+            <AppenderRef ref="CatAppender"/>
         </Root>
     </Loggers>
 </Configuration>

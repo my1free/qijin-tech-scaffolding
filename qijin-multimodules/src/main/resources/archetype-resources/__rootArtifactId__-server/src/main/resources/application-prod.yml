@@ -1,6 +1,9 @@
 server:
   port: 8080
 
+logging:
+  config: classpath:log4j2-prod.xml
+
 spring:
   profiles:
     active: prod

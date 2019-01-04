@@ -1,6 +1,9 @@
 server:
   port: 8080
 
+logging:
+  config: classpath:log4j2-dev.xml
+
 spring:
   profiles:
     active: dev
