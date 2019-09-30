@@ -1,4 +1,0 @@
-debug: false
-
-zebra:
-  jdbcRef: XXXXXX
