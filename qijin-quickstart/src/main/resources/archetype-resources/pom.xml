@@ -17,7 +17,7 @@
         <commons.lang3.version>3.7</commons.lang3.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <lombok.version>1.16.20</lombok.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <mybtis.springboot.version>1.3.2</mybtis.springboot.version>
 
         <plugin.compiler.version>3.8.0</plugin.compiler.version>
